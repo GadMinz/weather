@@ -1,2 +1,9 @@
-@import '~normalize.css';
+@import "~normalize.css";
 
+body {
+  font-family: "Nunito", sans-serif;
+}
+.container {
+  margin: 20px auto;
+  max-width: 1200px;
+}
