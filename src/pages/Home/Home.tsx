@@ -2,6 +2,8 @@ import React from "react";
 import s from "./Home.module.scss";
 import ThisDay from "./components/ThisDay/ThisDay";
 import ThisDayInfo from "./components/ThisDayInfo/ThisDayInfo";
+import Days from "./components/Days/Days";
+
 interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
@@ -11,6 +13,7 @@ const Home: React.FC<HomeProps> = () => {
         <ThisDay />
         <ThisDayInfo />
       </div>
+      <Days />
     </div>
   );
 };

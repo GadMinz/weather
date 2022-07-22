@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./ThisDay.module.scss";
-import sun from "../../../../assets/img/sun.svg";
+import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
 
 interface ThisDayProps {}
 
@@ -12,7 +12,7 @@ const ThisDay: React.FC<ThisDayProps> = () => {
           <div className={s.this__temp}>20°</div>
           <div className={s.this__day_name}>Сегодня</div>
         </div>
-        <img width={120} src={sun} alt="sun" />
+        <GlobalSvgSelector id='sun' />
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
