@@ -11,18 +11,47 @@ const options = [
   { value: "city-3", label: "Ижевск" },
 ];
 
-const customStyles = {
-  control: (styles: any) => ({
-    ...styles,
-    backgroundColor: "rgba(71, 147, 255, 0.2)",
-    width: "194px",
-    height: "35px",
-    border: "none",
-    borderRadius: "10px",
-  }),
-};
-
 const Header: React.FC<HeaderProps> = () => {
+  const [theme, setTheme] = React.useState("light");
+
+  const customStyles = {
+    control: (styles: any) => ({
+      ...styles,
+      backgroundColor: theme === "dark" ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
+      width: "194px",
+      height: "35px",
+      border: "none",
+      borderRadius: "10px",
+    }),
+    singleValue: (styles: any) => ({
+      ...styles,
+      color: theme === "dark" ? "#ffffff" : "#000000",
+    }),
+  };
+
+  const changeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+    console.log(theme);
+  };
+
+  React.useEffect(() => {
+    const root = document.querySelector(":root") as HTMLElement;
+
+    const components: string[] = [
+      "--body-background",
+      "--components-background",
+      "--card-background",
+      "--card-shadow",
+      "--text-color",
+    ];
+
+    components.forEach((component: string) => {
+      root.style.setProperty(
+        `${component}-default`,
+        `var(${component}-${theme})`
+      );
+    });
+  }, [theme]);
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
@@ -34,7 +63,7 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
       </div>
       <div className={s.wrapper}>
-        <div>
+        <div className={s.change_theme} onClick={changeTheme}>
           <GlobalSvgSelector id="change-theme" />
         </div>
         <Select

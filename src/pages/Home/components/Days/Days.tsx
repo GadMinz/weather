@@ -78,7 +78,7 @@ const Days: React.FC<DaysProps> = () => {
       <Tabs />
       <div className={s.days}>
         {days.map((day: Day) => (
-          <Card {...day} />
+          <Card key={day.day} {...day} />
         ))}
       </div>
     </>

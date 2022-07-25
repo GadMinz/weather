@@ -4,13 +4,13 @@
   padding: 20px;
   max-width: 400px;
   width: 100%;
-  background: $light-background;
+  background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 
   &_name {
     font-size: 40px;
-    color: #000000;
+    color: var(#{--text-color-default});
   }
 }
 
