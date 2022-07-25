@@ -4,7 +4,7 @@ import cloud from "../../../../assets/img/cloud.png";
 import ThisDayInfoItem from "./ThisDayInfoItem";
 
 interface ThisDayInfoProps {}
-interface Item {
+export interface Item {
   icon_id: string;
   name: string;
   value: string;
